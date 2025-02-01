@@ -1,4 +1,8 @@
 dependencyManagement {
+    imports {
+        // Importa el BOM de Spring Cloud
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
     dependencies {
         // Framework
         dependencySet(group: 'org.springframework.boot', version: "${springBootVersion}") {
@@ -40,8 +44,11 @@ dependencyManagement {
         dependency("org.hibernate:hibernate-entitymanager:${hibernateVersion}")
         dependency("mysql:mysql-connector-java:${mysqlVersion}")
         
-        // propias del proyecto
+        // Propias del proyecto
         dependency("com.ec.app.entities:app-entities:${appEntitiesVersion}")
 
+        // Jasper
+        dependency("net.sf.jasperreports:jasperreports:${jasperReportsVersion}")
+        dependency("com.lowagie:itext:${itextVersion}")
     }
 }
